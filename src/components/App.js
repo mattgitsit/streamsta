@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
+import history from '../history';
 
 import StreamList from './streams/StreamList';
 import StreamEdit from './streams/StreamEdit';
@@ -13,15 +14,19 @@ class App extends Component {
   render() {
     return (
       <div className="ui container">
-        <Router>
+        <Router history={history}>
           <Fragment>
             <Header />
             <Switch>
               <Route exact path="/" component={StreamList} />
               <Route exact path="/streams/new" component={StreamCreate} />
-              <Route exact path="/streams/edit" component={StreamEdit} />
-              <Route exact path="/streams/delete" component={StreamDelete} />
-              <Route exact path="/streams/show" component={StreamShow} />
+              <Route exact path="/streams/edit/:id" component={StreamEdit} />
+              <Route
+                exact
+                path="/streams/delete/:id"
+                component={StreamDelete}
+              />
+              <Route exact path="/streams/show/:id" component={StreamShow} />
             </Switch>
           </Fragment>
         </Router>

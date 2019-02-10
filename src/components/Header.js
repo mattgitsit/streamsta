@@ -10,7 +10,7 @@ const Header = () => {
         Streamsta
       </Link>
       <div className="right menu">
-        <Link to="/" className="item">
+        <Link to="/" className="ui button">
           All Streams
         </Link>
         <GoogleAuth />
