@@ -26,7 +26,7 @@ class App extends Component {
                 path="/streams/delete/:id"
                 component={StreamDelete}
               />
-              <Route exact path="/streams/show/:id" component={StreamShow} />
+              <Route exact path="/streams/:id" component={StreamShow} />
             </Switch>
           </Fragment>
         </Router>
